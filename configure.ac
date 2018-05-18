@@ -1,6 +1,6 @@
 # Initialize Autoconf
 AC_PREREQ([2.60])
-AC_INIT([libwacom], [0.30])
+AC_INIT([libwacom], [0.30.test])
 AC_CONFIG_HEADERS([config.h])
 
 # Initialize Automake

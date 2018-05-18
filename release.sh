@@ -203,7 +203,7 @@ release_to_github() {
     # note git_username should include the suffix ":KEY" if the user has enabled 2FA
     # example skomra:de0e4dc3efbf2d008053027708227b365b7f80bf
 
-    GH_REPO="linuxwacom"
+    GH_REPO="skomra"
     PROJECT="libwacom"
     release_description="Temporary Empty Release Description"
     release_descr=$(jq -n --arg release_description "$release_description" '$release_description')
@@ -376,7 +376,7 @@ get_section() {
 	module_url=`echo $module_url | cut -d'/' -f3,4`
     else
 	# The look for mesa, xcb, etc...
-	module_url=`echo "$full_module_url" | $GREP -o -e "linuxwacom/.*"`
+	module_url=`echo "$full_module_url" | $GREP -o -e "skomra/.*"`
 	if [ $? -eq 0 ]; then
 	     module_url=`echo $module_url | cut -d'/' -f2,3`
 	else
@@ -395,7 +395,7 @@ get_section() {
 	return 1
     fi
 
-    if [ x"$section" = xlinuxwacom ]; then
+    if [ x"$section" = xskomra ]; then
 	section=`echo $module_url | cut -d'/' -f2`
 	if [ $? -ne 0 ]; then
 	    echo "Error: unable to extract section from $module_url second field."
